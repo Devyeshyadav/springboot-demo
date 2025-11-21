@@ -42,8 +42,11 @@ public class Java08Features {
     static void lambdaExpressionExample() {
         System.out.println("\n--- Lambda Expression ---");
 
-        Runnable r = () -> System.out.println("Lambda: Running thread...");
-        new Thread(r).start();
+     // Lambda for printing a message
+        Runnable message = () -> System.out.println("Lambda says Hello!");
+
+      // Run the lambda
+        message.run();
     }
 
     // ---------------------------------------------------------
