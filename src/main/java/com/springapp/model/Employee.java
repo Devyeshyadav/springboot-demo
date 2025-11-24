@@ -1,40 +1,61 @@
 package com.springapp.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 @Entity
-@Table(name = "Employee")
+@Table(name = "employee")
 public class Employee {
 
 	@Id
-	public String eid;
-	public String ename;
-	public int salary;
-	public String dep;
+	@Column(name = "emp_id", nullable = false, updatable = false)
+	private String empId;
 
-    public Employee(String eid, String ename, int salary, String dep) {
-        this.eid = eid;
-        this.ename = ename;
-        this.salary = salary;
-        this.dep = dep;
-    }
+	@Column(name = "e_name")
+	private String eName;
 
-	public String getEid() {
-		return eid;
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "department")
+	private String department;
+
+	@Column(name = "salary")
+	private int salary;
+
+	// ----- Getters and Setters -----
+
+	public String getEmpId() {
+		return empId;
 	}
 
-	public void setEid(String eid) {
-		this.eid = eid;
+	public void setEmpId(String empId) {
+		this.empId = empId;
 	}
 
-	public String getEname() {
-		return ename;
+	public String geteName() {
+		return eName;
 	}
 
-	public void setEname(String ename) {
-		this.ename = ename;
+	public void seteName(String eName) {
+		this.eName = eName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 
 	public int getSalary() {
@@ -45,17 +66,18 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public String getDep() {
-		return dep;
-	}
-
-	public void setDep(String dep) {
-		this.dep = dep;
+	public Employee(String empId, String eName, String email, String department, int salary) {
+		super();
+		this.empId = empId;
+		this.eName = eName;
+		this.email = email;
+		this.department = department;
+		this.salary = salary;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", ename=" + ename + ", salary=" + salary + ", dep=" + dep + "]";
+		return "Employee [empId=" + empId + ", eName=" + eName + ", email=" + email + ", department=" + department
+				+ ", salary=" + salary + "]";
 	}
-
 }

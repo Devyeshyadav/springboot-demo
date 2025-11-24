@@ -10,14 +10,14 @@ public class EmployeeStream {
 	public static void main(String[] args) {
 
 		List<Employee> emplist = List.of(
-			    new Employee("1", "John", 7000, "IT"),
-			    new Employee("2", "Alice", 4000, "HR"),
-			    new Employee("3", "Carlo", 5000, "Lead")
+			    new Employee("1", "John", "john@dxc.com", "IT", 5000),
+			    new Employee("2", "Alice", "Alice@dxc.com", "HR", 6000),
+			    new Employee("3", "Carlo", "Carlo@dxc.com", "Lead", 7000)
 			);
 
 		List<Employee> sal = emplist.stream()
 				.filter(e -> e.getSalary() <= 4000)
-				.sorted(Comparator.comparing(Employee::getDep))
+				.sorted(Comparator.comparing(Employee::getDepartment))
 //				.map(e -> e)
 				.toList();
 
