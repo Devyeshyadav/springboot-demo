@@ -1,0 +1,9 @@
+Garbage collection refers to this mechanism of handling the memory in the program. Through garbage collection, the unwanted memory is freed up by removing the objects that are no longer needed.
+
+
+OOPS concepts
+
+Encapsulation - bundling data (fields) and methods that operate on that data into a single unit, typically a class
+Inheritance	  - allows a new class to inherit fields and methods from an existing class.
+Polymorphism  - Polymorphism allows objects of different classes to be treated as objects of a common superclass. In Java, polymorphism is mainly achieved through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).
+Abstraction   - hiding complex implementation details and showing only the essential features of an object.

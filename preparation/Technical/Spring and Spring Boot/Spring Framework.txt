@@ -1,0 +1,11 @@
+Spring Boot is built on top of the Spring framework to create stand-alone RESTful web applications with very minimal configuration and there is no need of external servers to run the application because it has embedded servers like Tomcat.
+
+Easier
+More production-ready
+More scalable
+Faster
+More Customizable
+
+
+
+Maven is a build automation and project management tool that helps developers build, publish, and deploy projects

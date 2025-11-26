@@ -1,0 +1,105 @@
+1. Java Core and Advanced Concepts
+What are the differences between HashMap and ConcurrentHashMap? When would you use one over the other?
+
+HashMap is not synchronized and is therefore not thread-safe, making it unsuitable for concurrent access without external synchronization. ConcurrentHashMap, on the other hand, is thread-safe and provides segment-based locking for better concurrency. Use ConcurrentHashMap in multi-threaded environments where thread safety is required.
+Explain the concept of immutability and why it’s important in Java.
+
+Immutability means that once an object is created, it cannot be modified. It provides thread safety, reduces bugs, and simplifies debugging. In Java, final classes like String are immutable. Making objects immutable ensures data consistency and reduces synchronization requirements.
+What is the difference between == and equals() in Java?
+
+The == operator checks for reference equality, meaning it checks if two object references point to the same memory location. The equals() method, however, is meant to check for content equality. For instance, in String comparison, == compares memory locations, while equals() compares string values.
+How does Java handle memory management? Explain garbage collection and how you can influence it.
+
+Java handles memory through automatic garbage collection, which removes objects that are no longer referenced. The JVM has different GC algorithms, and developers can configure the JVM with options like -Xms and -Xmx to set memory limits or trigger GC through System.gc(), though it's not recommended as it only suggests GC execution.
+What are lambdas and functional interfaces, and how do they work in Java 8?
+
+Lambdas in Java 8 allow for a more concise syntax for anonymous functions and are mainly used in functional interfaces, which contain only one abstract method (like Runnable, Comparable). Lambdas simplify code by enabling functional programming features and are frequently used with the Stream API.
+2. Spring and Spring Boot Fundamentals
+Explain the Spring IoC container and dependency injection. Why is it useful?
+
+The IoC (Inversion of Control) container in Spring manages the lifecycle and configuration of objects using dependency injection (DI). DI allows objects to be injected at runtime, promoting loose coupling and testability. The container is responsible for instantiating, configuring, and managing bean dependencies.
+What are the differences between @Component, @Repository, @Service, and @Controller in Spring?
+
+@Component is a generic stereotype for Spring-managed components. @Repository is used for data access layers, @Service is used for business logic layers, and @Controller is used in MVC for handling HTTP requests.
+What is Spring Boot, and how does it differ from the core Spring Framework?
+
+Spring Boot is an extension of the Spring Framework that simplifies the setup and development process through auto-configuration and embedded servers. Unlike the core Spring Framework, Spring Boot minimizes boilerplate configuration and promotes convention over configuration.
+Explain the concept of Spring Boot starters and why they are useful.
+
+Spring Boot starters are pre-configured dependencies for specific functionalities, like spring-boot-starter-web for web applications. They simplify dependency management and make it easier to add specific functionalities to applications.
+How does Spring Boot handle auto-configuration? What are the advantages of this feature?
+
+Spring Boot uses @EnableAutoConfiguration to automatically configure beans based on the classpath, dependencies, and environment settings. This reduces manual configuration and speeds up development.
+3. Spring Boot REST and Web Applications
+What is @RestController, and how is it different from @Controller?
+
+@RestController is a specialized version of @Controller in Spring that returns response bodies directly, without requiring a view resolver. It is typically used in RESTful web services to send JSON/XML responses.
+How do you handle exceptions in a Spring Boot application? Explain @ControllerAdvice and @ExceptionHandler.
+
+@ControllerAdvice is used for centralized exception handling in Spring, and @ExceptionHandler is used to define methods that handle specific exceptions at the controller level. Combined, these annotations help manage errors gracefully.
+What are some best practices for building REST APIs with Spring Boot?
+
+Follow RESTful principles, use meaningful HTTP methods, handle exceptions properly, secure APIs, document them with Swagger, and ensure idempotency for safe methods like GET and PUT.
+Explain how to use @RequestMapping, @GetMapping, @PostMapping, etc., in a Spring Boot application.
+
+These annotations are used to map HTTP requests to controller methods. @RequestMapping is generic and can specify methods, while @GetMapping, @PostMapping, etc., are specific to GET, POST, and other HTTP methods.
+How can you secure your REST APIs in Spring Boot? Explain the basics of Spring Security.
+
+Spring Security provides authentication and authorization features for securing REST APIs. It uses configurations and annotations to enforce access control, handle login, and protect endpoints.
+4. Data Persistence and JPA/Hibernate
+Explain JPA and how it is different from Hibernate.
+
+JPA is a specification for object-relational mapping (ORM) in Java. Hibernate is an implementation of JPA, offering additional features and flexibility for database operations.
+What is the role of @Entity, @Id, and @GeneratedValue in JPA?
+
+@Entity marks a class as a JPA entity. @Id defines the primary key, and @GeneratedValue specifies that the primary key should be generated automatically.
+How do you configure a database connection in a Spring Boot application?
+
+Spring Boot simplifies database configuration through properties like spring.datasource.url, spring.datasource.username, and spring.datasource.password in application.properties.
+What is the purpose of @Transactional, and when should you use it?
+
+@Transactional manages transactions for methods, ensuring rollback on exceptions and consistency. It is used for methods that involve multiple database operations to maintain atomicity.
+5. Microservices and Spring Boot
+Explain the concept of microservices. How do they differ from monolithic architectures?
+
+Microservices are independent, small services that focus on specific tasks and can be deployed individually. Unlike monolithic architectures, microservices enhance scalability, flexibility, and fault isolation.
+What role does Spring Boot play in building microservices?
+
+Spring Boot simplifies microservices development by offering a lightweight and configurable framework with embedded servers, dependency management, and auto-configuration.
+What is Spring Cloud, and how does it support microservices architecture?
+
+Spring Cloud provides tools for managing microservices architecture, including service discovery, load balancing, and configuration management, enhancing the ease of developing distributed applications.
+How do you implement inter-service communication in microservices? Explain REST, gRPC, and messaging.
+
+Inter-service communication can be done via REST (HTTP), gRPC (for more efficient communication), or messaging (e.g., RabbitMQ, Kafka) for asynchronous processing.
+6. Caching, Logging, and Monitoring
+How does caching work in Spring Boot? Explain @Cacheable, @CachePut, and @CacheEvict.
+
+@Cacheable caches method results, @CachePut updates the cache, and @CacheEvict removes entries. Spring Boot supports various caching providers like EhCache and Redis.
+What are some strategies for logging in a Spring Boot application? How do you configure Logback or Log4j2?
+
+Use a logging framework (Logback by default in Spring Boot). Configure logging levels and patterns in application.properties or logback.xml for fine-grained control.
+How do you monitor a Spring Boot application? Explain Actuator and its usefulness.
+
+Spring Boot Actuator provides endpoints to monitor application health, metrics, and other runtime information, aiding in maintenance and debugging.
+7. Performance Optimization and Scalability
+What are some strategies for optimizing the performance of a Spring Boot application?
+
+Use caching, optimize database queries, profile and monitor for bottlenecks, use asynchronous processing, and implement pagination for large datasets.
+How does Spring Boot handle thread management and concurrency?
+
+Spring Boot manages thread pools using configurations and the @Async annotation, allowing for concurrent execution in certain tasks, like I/O-bound processes.
+8. Testing and CI/CD
+How do you perform unit testing in Spring Boot? Explain @MockBean and @WebMvcTest.
+
+@MockBean allows mocking dependencies in Spring Boot tests, while @WebMvcTest is used to test the MVC layer by loading only web-related beans.
+Explain how you would set up a CI/CD pipeline for a Spring Boot application.
+
+Use tools like Jenkins, GitLab CI, or GitHub Actions to automate build, test, and deployment processes. Configure pipelines to handle code integration, unit testing, and deployment to environments.
+9. Design Patterns and Best Practices
+What are some common design patterns used in Spring applications?
+
+Common patterns include Singleton (for beans), Factory, Prototype, and Proxy patterns. These promote reusability, flexibility, and better structuring.
+How would you apply the Singleton pattern in Spring?
+
+Spring beans are singleton by default, meaning a single instance is created and managed by the Spring container for the application lifecycle.

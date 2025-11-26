@@ -1,0 +1,68 @@
+✅ Java 8 (2014) — Most transformative release
+Main Features
+
+Lambda Expressions
+Enables functional programming style and cleaner code.
+
+Stream API
+Powerful operations on collections (map, filter, reduce).
+
+Functional Interfaces
+Built-in: Predicate, Function, Consumer, etc.
+
+Default & Static Methods in Interfaces
+Allows adding methods to interfaces without breaking implementations.
+
+Optional Class
+Helps avoid NullPointerException.
+
+New Date & Time API (java.time)
+Better replacement for Date and Calendar.
+
+✅ Java 11 (2018) – LTS — Modern standardization
+Main Features
+
+HTTP Client API (Standard)
+Replaces HttpURLConnection, supports HTTP/2 & async requests.
+
+Local-Variable Syntax for Lambda Parameters
+Can use var inside lambdas.
+
+String Utility Methods Added
+isBlank(), lines(), repeat(), strip()
+
+Files Utility Updates
+readString(), writeString() for easier file operations.
+
+Removal of Java EE & CORBA Modules
+Cleaned up the JDK.
+
+Flight Recorder & Mission Control
+Low-overhead performance monitoring.
+
+ZGC (Experimental)
+Ultra-low pause time garbage collector.
+
+✅ Java 17 (2021) – LTS — Modern, secure, and faster
+Main Features
+
+Sealed Classes (Final)
+Controls which classes can extend a class.
+
+Pattern Matching for instanceof
+Simplifies type checks and casts.
+
+Records (Final)
+Immutable data carrier classes with minimal boilerplate.
+
+New macOS Rendering Pipeline
+Improved performance.
+
+Strong Encapsulation of JDK Internals
+Better security, fewer reflective hacks.
+
+Improved Garbage Collectors
+ZGC & Shenandoah made production-ready.
+
+Deprecations & Removals
+Applet API deprecated; RMI activation removed.

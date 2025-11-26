@@ -1,0 +1,21 @@
+Strengths:
+
+Strong Collaborator
+I work well in cross-functional teams, communicate clearly, and coordinate effectively to ensure smooth delivery.
+
+Quick Implementer
+I’m able to understand technical tasks quickly and translate them into working solutions efficiently.
+
+Problem-Solving & Analytical Thinking
+I enjoy breaking down complex issues, identifying the root cause, and finding practical solutions — especially in backend systems.
+
+Attention to Detail
+I ensure my code is clean, optimized, and maintainable, reducing rework and improving overall project quality.
+
+Weaknesses:
+
+Spending Extra Time Understanding Requirements
+I tend to spend additional time understanding the requirements in detail before starting implementation. Initially it slowed me down slightly, but I’m learning to balance detailed analysis with timely execution by clarifying doubts early and breaking work into smaller parts.
+
+Hesitating to Say No
+Sometimes I take up additional tasks because I want to help the team, which can stretch my schedule. I’m improving by setting clearer priorities and communicating timelines upfront.
