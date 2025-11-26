@@ -9,8 +9,8 @@ import jakarta.persistence.Table;
 public class Employee {
 
 	@Id
-	@Column(name = "emp_id", nullable = false, updatable = false)
-	private String empId;
+	@Column(name = "emp_id")
+	private Integer empId;
 
 	@Column(name = "e_name")
 	private String eName;
@@ -26,16 +26,16 @@ public class Employee {
 
 	// ----- Getters and Setters -----
 
-	public String getEmpId() {
+	public String geteName() {
+		return eName;
+	}
+
+	public Integer getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(String empId) {
+	public void setEmpId(Integer empId) {
 		this.empId = empId;
-	}
-
-	public String geteName() {
-		return eName;
 	}
 
 	public void seteName(String eName) {
@@ -66,7 +66,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public Employee(String empId, String eName, String email, String department, int salary) {
+	public Employee() {
+		super();
+	}
+
+	public Employee(Integer empId, String eName, String email, String department, int salary) {
 		super();
 		this.empId = empId;
 		this.eName = eName;

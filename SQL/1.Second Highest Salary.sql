@@ -13,3 +13,13 @@ FROM (
     ORDER BY salary DESC
 ) AS t
 ORDER BY salary ASC;
+
+select MAX(SALARY) from employee
+WHERE SALARY < (select MAX(SALARY) from employee)
+
+SELECT SALARY
+FROM (
+    SELECT SALARY, DENSE_RANK() OVER (ORDER BY SALARY DESC) AS rnk
+    FROM employee
+) t
+WHERE rnk =2;
