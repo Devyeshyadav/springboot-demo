@@ -16,6 +16,6 @@ public class PostAPIController {
 	 @PostMapping("/getuser")
 	    public ResponseEntity<Integer> getUser(@RequestBody Employee employee) {
 	        // simple echo of uid or whole object as JSON if you prefer
-	        return ResponseEntity.ok(employee.getEmpId());
+	        return ResponseEntity.ok(employee.getEmpid());
 	    }
 }

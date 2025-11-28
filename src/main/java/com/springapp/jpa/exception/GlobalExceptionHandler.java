@@ -1,12 +1,13 @@
 package com.springapp.jpa.exception;
 
-import jakarta.servlet.http.HttpServletRequest;
+import java.time.OffsetDateTime;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.time.OffsetDateTime;
+import jakarta.servlet.http.HttpServletRequest;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -24,16 +25,13 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
     }
 
-    // Generic fallback for other exceptions
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGeneric(Exception ex, HttpServletRequest request) {
-        ErrorResponse body = new ErrorResponse(
-                OffsetDateTime.now().toString(),
-                HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                "An unexpected error occurred",
-                request.getRequestURI()
-        );
-        // optionally log ex here
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
+    public ResponseEntity<String> handleAll(Exception ex) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(ex.toString()).append("\n");
+        for (StackTraceElement el : ex.getStackTrace()) {
+            sb.append("    at ").append(el.toString()).append("\n");
+        }
+        return ResponseEntity.status(500).body(sb.toString()); // visible in curl
     }
 }

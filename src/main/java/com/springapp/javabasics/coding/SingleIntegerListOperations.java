@@ -13,7 +13,7 @@ public class SingleIntegerListOperations {
 
 	public static void main(String[] args) {
 
-		List<Integer> numlist = new ArrayList<>(List.of(1, 3, 4, 6, 7, 9, 2 , 1));
+		List<Integer> numlist = new ArrayList<>(List.of(1, 3, 4, 6, 7, 9, 2, 1));
 
 		ascendingOrder(numlist);
 		descendingOrder(numlist);

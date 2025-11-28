@@ -4,16 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "employee")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
 
 	@Id
 	@Column(name = "emp_id")
-	private Integer empId;
+	private Integer empid;
 
 	@Column(name = "e_name")
-	private String eName;
+	private String ename;
 
 	@Column(name = "email")
 	private String email;
@@ -23,65 +29,4 @@ public class Employee {
 
 	@Column(name = "salary")
 	private int salary;
-
-	// ----- Getters and Setters -----
-
-	public String geteName() {
-		return eName;
-	}
-
-	public Integer getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(Integer empId) {
-		this.empId = empId;
-	}
-
-	public void seteName(String eName) {
-		this.eName = eName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-
-	public Employee() {
-		super();
-	}
-
-	public Employee(Integer empId, String eName, String email, String department, int salary) {
-		super();
-		this.empId = empId;
-		this.eName = eName;
-		this.email = email;
-		this.department = department;
-		this.salary = salary;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [empId=" + empId + ", eName=" + eName + ", email=" + email + ", department=" + department
-				+ ", salary=" + salary + "]";
-	}
 }
