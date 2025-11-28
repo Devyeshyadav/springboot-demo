@@ -57,7 +57,12 @@
     <artifactId>mssql-jdbc</artifactId>
     <version>13.2.1.jre11</version> <!-- choose jre8/jre11/jre17 as per your JDK -->
   </dependency>
-
+  
+  <!-- Spring Boot Actuator -->
+  <dependency>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-actuator</artifactId>
+  </dependency>
 
     <!-- JJWT (API + runtime implementations) -->
     <dependency>
